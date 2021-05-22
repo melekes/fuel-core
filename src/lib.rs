@@ -1,6 +1,9 @@
 pub mod consts;
 pub mod crypto;
 pub mod interpreter;
+pub mod models;
+mod block_executor;
+mod database;
 
 pub mod prelude {
     pub use crate::interpreter::{Call, CallFrame, ExecuteError, Interpreter, LogEvent, MemoryRange};
