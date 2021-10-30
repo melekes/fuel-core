@@ -988,7 +988,7 @@ dependencies = [
 [[package]]
 name = "fuel-vm"
 version = "0.1.0"
-source = "git+ssh://git@github.com/FuelLabs/fuel-vm.git#bf6881fd213241be884552e63c58a2c27cb1da1e"
+source = "git+ssh://git@github.com/FuelLabs/fuel-vm.git?rev=bf6881fd213241be884552e63c58a2c27cb1da1e#bf6881fd213241be884552e63c58a2c27cb1da1e"
 dependencies = [
  "fuel-asm",
  "fuel-storage",

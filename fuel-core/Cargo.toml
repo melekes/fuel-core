@@ -18,7 +18,7 @@ async-graphql = "2.9.13"
 axum = { version = "0.2.3", optional = true }
 bincode = "1.3"
 dirs = "3.0.2"
-fuel-vm = { git = "ssh://git@github.com/FuelLabs/fuel-vm.git", features = ["serde-types"] }
+fuel-vm = { git = "ssh://git@github.com/FuelLabs/fuel-vm.git", features = ["serde-types"], rev ="bf6881fd213241be884552e63c58a2c27cb1da1e" }
 fuel-storage = { git = "ssh://git@github.com/FuelLabs/fuel-storage.git" }
 futures = "0.3"
 hyper = "0.14"
@@ -38,7 +38,7 @@ thiserror = { version = "1.0" }
 uuid = { version = "0.8", features = ["v4"] }
 
 [dev-dependencies]
-fuel-vm = { git = "ssh://git@github.com/FuelLabs/fuel-vm.git", features = ["serde-types", "random"] }
+fuel-vm = { git = "ssh://git@github.com/FuelLabs/fuel-vm.git", features = ["serde-types", "random"], rev = "bf6881fd213241be884552e63c58a2c27cb1da1e" }
 
 [features]
 default = ["rocksdb", "axum"]
