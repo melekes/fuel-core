@@ -1456,10 +1456,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "fuel-client-interfaces"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "fuel-asm",
+ "fuel-storage",
+ "fuel-tx 0.2.0",
+ "fuel-types",
+ "fuel-vm 0.2.0",
+ "futures",
+ "hashbrown",
+ "parking_lot",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
 name = "fuel-core"
 version = "0.1.2"
 dependencies = [
  "async-graphql",
+ "async-trait",
  "axum",
  "bincode",
  "chrono",
@@ -1467,8 +1486,10 @@ dependencies = [
  "dirs 3.0.2",
  "env_logger",
  "fuel-asm",
+ "fuel-client-interfaces",
  "fuel-storage",
  "fuel-tx 0.2.0",
+ "fuel-txpool",
  "fuel-types",
  "fuel-vm 0.2.0",
  "futures",
@@ -1681,6 +1702,22 @@ dependencies = [
  "rand 0.8.4",
  "serde",
  "sha2",
+]
+
+[[package]]
+name = "fuel-txpool"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "fuel-client-interfaces",
+ "fuel-tx 0.2.0",
+ "fuel-types",
+ "futures",
+ "hashbrown",
+ "parking_lot",
+ "thiserror",
+ "tokio",
 ]
 
 [[package]]
@@ -4458,6 +4495,7 @@ dependencies = [
  "mio",
  "num_cpus",
  "once_cell",
+ "parking_lot",
  "pin-project-lite",
  "signal-hook-registry",
  "tokio-macros",
