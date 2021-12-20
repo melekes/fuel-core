@@ -17,10 +17,18 @@ WORKDIR /build/
 
 COPY . .
 
-RUN --mount=type=ssh cargo build --release
+RUN --mount=type=ssh \
+    --mount=type=cache,target=/usr/local/cargo/git \
+    --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,sharing=private,target=/build/target \
+    cargo build --release \
+    && mkdir -p /out \
+    && cp /build/target/release/fuel-core /out/ \
+    && cp /build/target/release/fuel-core.d /out/
 
 # Stage 2: Run
 FROM ubuntu:20.04 as run
+LABEL org.opencontainers.image.source https://github.com/FuelLabs/fuel-core
 
 ARG IP=0.0.0.0
 ARG PORT=4000
@@ -39,8 +47,8 @@ RUN apt-get update && \
 
 WORKDIR /root/
 
-COPY --from=builder /build/target/release/fuel-core .
-COPY --from=builder /build/target/release/fuel-core.d .
+COPY --from=builder /out/fuel-core .
+COPY --from=builder /out/fuel-core.d .
 
 # https://stackoverflow.com/a/44671685
 # https://stackoverflow.com/a/40454758

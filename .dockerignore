@@ -1,0 +1,12 @@
+# Ignore everything
+**
+
+# Allow files and directories
+!/assets/**
+!/examples/**
+!/fuel-client/**
+!/fuel-core/**
+!/fuel-indexer/**
+!/xtask/**
+!/Cargo.lock
+!/Cargo.toml
