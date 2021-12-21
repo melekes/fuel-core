@@ -1,6 +1,7 @@
 [workspace]
 # Use the new resolver to prevent dev-deps and build-deps from enabling debugging or test features in production.
 members = [
+  "crates/relayer",
   "examples/simple-wasm",
   "fuel-client",
   "fuel-core",
