@@ -1456,6 +1456,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "fuel-block-executer"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "fuel-client-interfaces",
+ "fuel-tx 0.2.0",
+ "fuel-types",
+ "fuel-vm 0.2.0",
+ "futures",
+ "hashbrown 0.12.0",
+ "parking_lot",
+ "rand 0.8.4",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
 name = "fuel-client-interfaces"
 version = "0.1.0"
 dependencies = [
@@ -1467,7 +1485,7 @@ dependencies = [
  "fuel-types",
  "fuel-vm 0.2.0",
  "futures",
- "hashbrown",
+ "hashbrown 0.11.2",
  "parking_lot",
  "thiserror",
  "tokio",
@@ -1714,7 +1732,7 @@ dependencies = [
  "fuel-tx 0.2.0",
  "fuel-types",
  "futures",
- "hashbrown",
+ "hashbrown 0.11.2",
  "parking_lot",
  "thiserror",
  "tokio",
@@ -1751,14 +1769,14 @@ dependencies = [
 [[package]]
 name = "fuel-vm"
 version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6a51584f4230a4bf19099fee60da2e4a00b67d2e39a3bc94a434f207e8a224e"
+source = "git+https://github.com/FuelLabs/fuel-vm.git?branch=substorage#6bcf2bf2ee3c022aa6e669783fa6d690a238e280"
 dependencies = [
  "fuel-asm",
  "fuel-merkle",
  "fuel-storage",
  "fuel-tx 0.2.0",
  "fuel-types",
+ "hashbrown 0.12.0",
  "itertools",
  "secp256k1",
  "serde",
@@ -2111,6 +2129,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "hashbrown"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8c21d40587b92fa6a6c6e3c1bdbf87d75511db5672f9c93175574b3a00df1758"
+dependencies = [
+ "ahash",
+]
+
+[[package]]
 name = "heck"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2295,7 +2322,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bc633605454125dec4b66843673f01c7df2b89479b32e0ed634e43a91cff62a5"
 dependencies = [
  "autocfg",
- "hashbrown",
+ "hashbrown 0.11.2",
  "serde",
 ]
 
@@ -3535,7 +3562,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "631f7d2a2854abb66724f492ce5256e79685a673dc210ac022194cedd5c914d3"
 dependencies = [
  "bytecheck",
- "hashbrown",
+ "hashbrown 0.11.2",
  "ptr_meta",
  "rend",
  "rkyv_derive",
